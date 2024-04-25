@@ -1,0 +1,14 @@
+  <div class="banner">
+    <h1>Movie Lists</h1>
+  </div>
+<div class="container">
+  <% @lists.each do |list|%>
+    <div class="card">
+      <h2><%= list.name %></h2>
+      <%= link_to "See list", list_path(list) %>
+    </div>
+  <%end%>
+  <div>
+    <%=link_to "create list", new_list_path %>
+  </div>
+</div>
