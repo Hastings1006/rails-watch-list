@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark.list = @list
     if @bookmark.save
-      redirect_to lists_path, notice: "bookmark added"
+      redirect_to root_path, notice: "bookmark added"
     else
       render :new, status: :unprocessable_entity
     end

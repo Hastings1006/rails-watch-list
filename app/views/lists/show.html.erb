@@ -10,6 +10,6 @@
       <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete', turbo_confirm: "Are you sure?"}%>
     </div>
   <%end%>
-  <%= link_to "back", lists_path%>
+  <%= link_to "back", root_path%>
   <%= link_to "add bookmark to list", new_list_bookmark_path(@list) %>
 </div>
