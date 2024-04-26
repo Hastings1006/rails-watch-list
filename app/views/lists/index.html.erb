@@ -7,7 +7,7 @@
 <div class="container">
   <div class="cards">
     <% @lists.each do |list|%>
-      <div class="card-product card-category">
+      <div class="card-product card-category mt-3">
         <% if list.photo.attached?%>
           <%=cl_image_tag(list.photo.key, height: 300, width: 400, crop: :fill) %>
         <%end%>
