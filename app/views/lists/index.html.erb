@@ -1,21 +1,23 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../app/assets/images/denise-jans-OaVJQZ-nFD0-unsplash.jpg');">
+<div class="banner">
   <div class="container">
     <h1>Create lists of <strong>your favourite movies!</strong></h1>
   </div>
 </div>
 
 <div class="container">
-  <% @lists.each do |list|%>
-    <div class="card-product">
-      <% if list.photo.attached?%>
-        <%=cl_image_tag(list.photo.key, height: 300, width: 400, crop: :fill) %>
-      <%end%>
-      <div class="card-product-infos">
-        <h2><%= list.name %></h2>
-        <%= link_to "See list", list_path(list) %>
+  <div class="cards">
+    <% @lists.each do |list|%>
+      <div class="card-product card-category">
+        <% if list.photo.attached?%>
+          <%=cl_image_tag(list.photo.key, height: 300, width: 400, crop: :fill) %>
+        <%end%>
+        <div class="card-product-infos">
+          <h2><%= list.name %></h2>
+          <%= link_to "See list", list_path(list) %>
+        </div>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
   <div>
     <%=link_to "create list", new_list_path %>
   </div>
